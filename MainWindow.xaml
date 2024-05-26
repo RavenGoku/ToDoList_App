@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_03.ToDoList_App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400"
+        Title="ToDo List Application" Height="450" Width="400"
         ResizeMode="NoResize">
-    <Grid>
+    <Grid Background="#FF69DF85">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10" />
             <ColumnDefinition Width="*" />
@@ -21,8 +21,14 @@
             <RowDefinition Height="10" />
             <RowDefinition Height="50" />
             <RowDefinition Height="10" />
-
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
+
+        <ScrollViewer x:Name="MainScroll" Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="ToDoList" Background="White" Opacity="0.87" />
+        </ScrollViewer>
+
+        <TextBox x:Name="ToDoInput" Grid.Row="3" Grid.Column="1" Background="White" Opacity="0.7" />
+        <Button Click="AddToDoButton_Click" Grid.Row="5" Grid.Column="1" Content="Create ToDo" Background="#FFA8A8A8" FontWeight="Bold" />
     </Grid>
 </Window>

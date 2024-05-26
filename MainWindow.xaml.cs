@@ -20,5 +20,25 @@ namespace _03.ToDoList_App
         {
             InitializeComponent();
         }
+
+        private void AddToDoButton_Click(object sender, RoutedEventArgs e)
+        {
+            //assign ToDoInput text to string
+            string input = ToDoInput.Text;
+            //check if string is not empty
+            if (!string.IsNullOrEmpty(input))
+            {
+                TextBlock textBlock = new TextBlock
+                {
+                    Text = input,
+                    Margin = new Thickness(10, 0, 0, 0)
+                };
+                ToDoList.Children.Add(textBlock);
+                //MainScroller always go to the bottom
+                MainScroll.ScrollToEnd();
+            }
+            ToDoInput.Clear();
+            ToDoInput.Focus();
+        }
     }
 }
